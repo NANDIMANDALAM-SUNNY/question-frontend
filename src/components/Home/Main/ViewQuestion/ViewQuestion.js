@@ -6,7 +6,7 @@ const ViewQuestion = () => {
   return (
     <div className='home'>
     <div className='main'>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <MainQuestion />
     </div>
   </div>

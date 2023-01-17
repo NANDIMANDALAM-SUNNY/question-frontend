@@ -20,7 +20,7 @@ const  MainQuestion = () => {
 const getSingleQuestion =async () =>{
   try {
     await axios
-        .get(`http://localhost:7000/question/${id}`)
+        .get(`https://question-qjn9.onrender.com/question/${id}`)
         .then((res) => 
         {
           console.log(res.data[0])

@@ -42,7 +42,7 @@ function Navbar() {
 
   const getProfile = async ()=>{
     try {
-        await axios.get("http://localhost:7000/users/getProfile",{
+        await axios.get("https://question-qjn9.onrender.com/users/getProfile",{
         headers: { "jwt-token" : token }
       }).then(res=>setProfile(res.data.data))
     } catch (error) {

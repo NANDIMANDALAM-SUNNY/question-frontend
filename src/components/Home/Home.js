@@ -18,7 +18,7 @@ useEffect(()=>{
     <div className='home'>
       <div className='main'>
         <Main />
-        <Sidebar />
+        {/* <Sidebar /> */}
       </div>
     </div>
   )
