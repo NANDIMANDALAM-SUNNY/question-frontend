@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Main from './Main/Main'
 import Sidebar from './Sidebar/Sidebar'
 import './css/home.css'
@@ -7,11 +7,13 @@ import { useNavigate } from 'react-router-dom'
 const Home = () => {
   const {token} = useContext(store)
   const navigate = useNavigate()
-  if(!token){
+ 
+
+useEffect(()=>{
+  if(token === null){
     navigate('/login')
   }
-
-
+})
   return (
     <div className='home'>
       <div className='main'>
