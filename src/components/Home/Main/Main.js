@@ -12,7 +12,7 @@ const Main = () => {
 const {votes } = useContext(store)
   const fetchQuestions = async ( )=>{
     try {
-      await axios.get(`http://localhost:7000/allquestions?sort=${sort}`).then((res) => {
+      await axios.get(`https://question-qjn9.onrender.com/allquestions?sort=${sort}`).then((res) => {
         setQuestions(res.data);
         console.log(res.data)
       });

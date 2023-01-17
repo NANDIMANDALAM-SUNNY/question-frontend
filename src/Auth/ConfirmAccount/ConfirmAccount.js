@@ -9,7 +9,7 @@ const [confirm,setConfirm] = useState("")
 const {confirmationToken} = useParams()
 const navigate = useNavigate()
 const confirmAccount = async ()=>{
-   await axios.get(`http://localhost:7000/users/confirmAccount/${confirmationToken}`)
+   await axios.get(`https://question-qjn9.onrender.com/users/confirmAccount/${confirmationToken}`)
    .then((res)=>{
     console.log(res.data.message)
     setConfirm(res.data.message)

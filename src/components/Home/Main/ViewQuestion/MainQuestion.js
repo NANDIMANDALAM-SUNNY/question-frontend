@@ -42,7 +42,7 @@ const getSingleQuestion =async () =>{
         user: profile._id,
         };
         await axios
-          .post("http://localhost:7000/addanswer", body)
+          .post("https://question-qjn9.onrender.com/addanswer", body)
           .then(() => {
             alert("Answer added successfully");
             setAnswer("");
@@ -63,7 +63,7 @@ const getSingleQuestion =async () =>{
         comment: comment,
         user: profile._id,
       };
-      await axios.post(`http://localhost:7000/addcomment/${id}`, body)
+      await axios.post(`https://question-qjn9.onrender.com/addcomment/${id}`, body)
       .then((res) => {
         setComment("");
         setShow(false);

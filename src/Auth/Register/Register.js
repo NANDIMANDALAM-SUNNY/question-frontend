@@ -85,7 +85,7 @@ const Register = () => {
     },
     validationSchema: signUpSchema,
     onSubmit :async (values,action)=>{
-      await  axios.post("http://localhost:7000/users/register",{...values,"profile":img})
+      await  axios.post("https://question-qjn9.onrender.com/users/register",{...values,"profile":img})
         .then((res)=>{
           setToken(res.data.data)
           setNotification(res.data.message)

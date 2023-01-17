@@ -14,7 +14,7 @@ const  AllQuestions = ({ data }) => {
   const handleClickVotes = async (msg) =>{
     
     try {
-      await axios.get(`http://localhost:7000/updatevote/${data._id}/${msg}`)
+      await axios.get(`https://question-qjn9.onrender.com/updatevote/${data._id}/${msg}`)
       .then((res)=>console.log(res.data))
       setVotes(!votes)
     } catch (error) {

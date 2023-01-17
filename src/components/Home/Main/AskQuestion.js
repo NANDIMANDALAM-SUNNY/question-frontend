@@ -33,7 +33,7 @@ const handleAddQuestion =async (e) =>{
       questionphoto:img
     }
     console.log(object)
-    await axios.post("http://localhost:7000/addquestion", object)
+    await axios.post("https://question-qjn9.onrender.com/addquestion", object)
     .then((res) => {
       // console.log(res.data);
       setLoading(false)

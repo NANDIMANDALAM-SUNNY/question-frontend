@@ -12,7 +12,7 @@ const ForgotPassword = () => {
     const handleSubmit =async ()=>{
           console.log(email)
           setEmail('')
-        await axios.post(`http://localhost:7000/users/forgot-password`, {"email":email})
+        await axios.post(`https://question-qjn9.onrender.com/users/forgot-password`, {"email":email})
         .then((res) => {
             setNotification(res.data.message)
         }).catch((err) => {

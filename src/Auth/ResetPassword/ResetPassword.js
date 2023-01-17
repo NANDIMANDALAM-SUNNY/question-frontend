@@ -16,7 +16,7 @@ const ResetPassword = () => {
 
 
 const verifyToken = async (req,res)=>{
-    await axios.get(`http://localhost:7000/users/reset-password/${token}`)
+    await axios.get(`https://question-qjn9.onrender.com/users/reset-password/${token}`)
       .then((res)=>{
         console.log(res.data)
         setVerify(res.data.message)
