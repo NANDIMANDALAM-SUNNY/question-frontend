@@ -5,18 +5,19 @@ import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import HistoryIcon from '@mui/icons-material/History';
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import '../../css/viewquestion.css'
 import {store} from '../../../../App'
 
 const  MainQuestion = () => {
   const {id} = useParams()
+  const navigate = useNavigate()
   const [questionData, setQuestionData] = useState();
   const [answer, setAnswer] = useState("");
   const [show, setShow] = useState(false);
   const [comment, setComment] = useState("");
-  const {profile} = useContext(store)
+  const {profile,token} = useContext(store)
 const getSingleQuestion =async () =>{
   try {
     await axios
@@ -76,7 +77,12 @@ const getSingleQuestion =async () =>{
 
   useEffect(() => {
     getSingleQuestion();
+
+    if(token === null){
+      navigate('/login')
+    }
   }, [id]);
+
 
   return (
     <div className="view-main">

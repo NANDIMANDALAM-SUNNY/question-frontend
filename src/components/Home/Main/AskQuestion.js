@@ -11,7 +11,7 @@ import FileBase64  from 'react-file-base64'
 
 const AskQuestion = () => {
   const navigate = useNavigate()
-  const {profile} = useContext(store)
+  const {profile,token} = useContext(store)
   const [title, setTitle] = useState("");
   const [tag, setTag] = useState([]);
   const [body,setBody]  = useState("")
@@ -47,7 +47,11 @@ const handleAddQuestion =async (e) =>{
   }
 }
 
-
+useEffect(()=>{
+  if(token === null){
+    navigate('/login')
+  }
+})
   return (
    <>
      <Box className="add-question">
